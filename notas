@@ -1,0 +1,39 @@
+1. En el perfil deberia mostrarse los proyectos (relacionados al nodo) con el que 
+esta involucrado un Serrano. Los proyectos funcionan con una dinamica parecida a 
+los grupos de WhatsApp, cualquier serrano puede crear un proyecto y configurar su 
+nombre, descripcion y estado (idea, ongoing, etc), y que pueda configurar si desde 
+la plataforma cualquier serrano puede unirse, o si el tiene que aprobar para que 
+se muestre como unido, tambien puede designar otros admins para ese proyecto que 
+puedan modificar la configuracion, o para aprobar nuevos ingresos.
+
+2. Una seccion de "aportes", donde objetos donados/prestados, charlas dadas, 
+actividades desarrrolladas, mantenimiento, administracion, (aportes de yerba mate 
+qsy)
+
+3. De entre los Tiers 
+	Tourist, 
+	Scholar {que es un becado porque no paga 
+aportes a nodo}, 
+	Standard, 
+	Founder
+
+4. En el perfil case parece que se esta diciendo que lo mas importante de un 
+Serrano es cuanto cobra por hora, en lugar de esto, podria ir su Tier y su Rol en 
+el nodo.
+
+5. El tier es algo mas relacionado al aporte economico al nodo, el Rol es mas del aporte comunitario a traves de tu rol en nodo como por ejemplo, infra, RRSS, charlas, organizacion, etc pensemos bien esto)
+
+
+6. Necesito que haya tambien una seccion/tab de Tasks o Tareas, que basicamente cualquier Serrano pueda publicar una tarea para hacer en el nodo, por ejemplo si se rompe un caño "reparar el caño", o si hay que colgar un cuadro, o poner un timbre, o comprar un extintor de incendios.
+
+7. Cada usuario va a tener un conteo de puntos que se reinicia por mes (aunque se mantiene el total de puntos en los stats de un miembro) la idea es que como en nodo no hay "membresia paga" propiamente dicho, se puedan calcular los aportes y que automaticamente se le calcule cuantos "puntos serrano" vale ese aporte o esa task, y que haya como un numero tipo "para ser standard, necesitas 100 o n puntos al mes". Entonces si alguien directamente ya da 100mil pesos al nodo y lo pone en aportes, eso se calcule y se vea si ya con eso cumplio con la membresia (esto hay que hablarlo bien). O si por ejemplo entre hacer charlas, limpiar el patio, sacar la basura, o organizar un evento para nodo, y ver cuanto puntos vale cada una de esa cosa. Tambien podriamos ir pensando como se calcula automaticamente esos puntos que vale cada cosa. De esta forma podemos asegurarnos que sean  reglas justas
+
+
+8. Una referencia para las tareas seria:
+	* Dar una charla = 5pts
+	* Organizar un evento = 
+	* Hora de mantenimiento fisico al espacio de nodo
+		a. incluye arreglos, limpieza, orden
+	* Hora de mantenimiento digital
+		a. incluye calendarios, pagina web, plataformas, documentacion, servidores
+
