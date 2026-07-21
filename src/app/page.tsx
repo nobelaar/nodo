@@ -31,9 +31,7 @@ export default function Home() {
         </div>
 
         <section className="flex flex-col gap-3">
-          <h2 className="font-display text-lg font-semibold text-text-primary">
-            Conexión
-          </h2>
+          <h2 className="font-display text-lg font-semibold text-text-primary">Conexión</h2>
           <div className="rounded-lg bg-surface border border-border p-4 flex items-center justify-between">
             <span className="text-sm text-text-secondary">Supabase</span>
             <SupabaseHealthcheck />
@@ -41,9 +39,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col gap-3">
-          <h2 className="font-display text-lg font-semibold text-text-primary">
-            Colors
-          </h2>
+          <h2 className="font-display text-lg font-semibold text-text-primary">Colors</h2>
           <div className="grid grid-cols-2 gap-2">
             {[
               { label: "bg", bg: "bg-bg" },
@@ -62,9 +58,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col gap-3">
-          <h2 className="font-display text-lg font-semibold text-text-primary">
-            Brand & Accents
-          </h2>
+          <h2 className="font-display text-lg font-semibold text-text-primary">Brand & Accents</h2>
           <div className="flex flex-wrap gap-2">
             {[
               { label: "Mint", className: "bg-brand-mint text-on-primary" },
@@ -86,9 +80,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col gap-3">
-          <h2 className="font-display text-lg font-semibold text-text-primary">
-            Components
-          </h2>
+          <h2 className="font-display text-lg font-semibold text-text-primary">Components</h2>
 
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -127,29 +119,19 @@ export default function Home() {
             </div>
 
             <div>
-              <span className="text-sm text-text-secondary w-24 mb-2 block">
-                Input
-              </span>
+              <span className="text-sm text-text-secondary w-24 mb-2 block">Input</span>
               <Input label="Email" placeholder="tu@email.com" />
             </div>
 
             <div>
-              <span className="text-sm text-text-secondary w-24 mb-2 block">
-                Input error
-              </span>
-              <Input
-                label="Password"
-                type="password"
-                error="Debe tener al menos 8 caracteres"
-              />
+              <span className="text-sm text-text-secondary w-24 mb-2 block">Input error</span>
+              <Input label="Password" type="password" error="Debe tener al menos 8 caracteres" />
             </div>
           </div>
         </section>
 
         <section className="flex flex-col gap-3">
-          <h2 className="font-display text-lg font-semibold text-text-primary">
-            TabBar
-          </h2>
+          <h2 className="font-display text-lg font-semibold text-text-primary">TabBar</h2>
           <div className="rounded-lg border border-border overflow-hidden">
             <TabBar active="inicio" />
           </div>

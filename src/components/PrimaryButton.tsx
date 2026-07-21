@@ -12,12 +12,7 @@ const sizeClasses = {
   lg: "h-14 px-8 text-lg",
 };
 
-export function PrimaryButton({
-  className,
-  size = "md",
-  children,
-  ...props
-}: PrimaryButtonProps) {
+export function PrimaryButton({ className, size = "md", children, ...props }: PrimaryButtonProps) {
   return (
     <button
       className={cn(

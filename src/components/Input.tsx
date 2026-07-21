@@ -13,10 +13,7 @@ export function Input({ label, error, className, ...props }: InputProps) {
   return (
     <div className={cn("flex flex-col gap-1.5", className)}>
       {label && (
-        <label
-          htmlFor={id}
-          className="text-sm font-medium text-text-secondary"
-        >
+        <label htmlFor={id} className="text-sm font-medium text-text-secondary">
           {label}
         </label>
       )}
@@ -32,9 +29,7 @@ export function Input({ label, error, className, ...props }: InputProps) {
         )}
         {...props}
       />
-      {error && (
-        <p className="text-sm text-coral">{error}</p>
-      )}
+      {error && <p className="text-sm text-coral">{error}</p>}
     </div>
   );
 }

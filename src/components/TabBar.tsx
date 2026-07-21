@@ -16,11 +16,7 @@ const tabs: { id: Tab; label: string; icon: string }[] = [
   { id: "perfil", label: "Perfil", icon: "👤" },
 ];
 
-export function TabBar({
-  active = "inicio",
-  onTabChange,
-  className,
-}: TabBarProps) {
+export function TabBar({ active = "inicio", onTabChange, className }: TabBarProps) {
   return (
     <nav
       className={cn(
@@ -36,15 +32,11 @@ export function TabBar({
             onClick={() => onTabChange?.(tab.id)}
             className={cn(
               "flex flex-col items-center gap-0.5 min-w-0 flex-1 transition-colors",
-              isActive
-                ? "text-primary"
-                : "text-text-muted hover:text-text-secondary",
+              isActive ? "text-primary" : "text-text-muted hover:text-text-secondary",
             )}
           >
             <span className="text-lg leading-none">{tab.icon}</span>
-            <span className="text-[10px] font-medium leading-tight">
-              {tab.label}
-            </span>
+            <span className="text-[10px] font-medium leading-tight">{tab.label}</span>
           </button>
         );
       })}

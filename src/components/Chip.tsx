@@ -1,13 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type ChipVariant =
-  | "default"
-  | "mint"
-  | "blue"
-  | "violet"
-  | "coral"
-  | "yellow"
-  | "orange";
+type ChipVariant = "default" | "mint" | "blue" | "violet" | "coral" | "yellow" | "orange";
 
 interface ChipProps {
   label: string;

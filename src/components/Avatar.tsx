@@ -38,11 +38,7 @@ export function Avatar({ name, src, size = "md", className }: AvatarProps) {
         alt={name}
         width={sizePx[size]}
         height={sizePx[size]}
-        className={cn(
-          "rounded-full object-cover",
-          sizeClasses[size],
-          className,
-        )}
+        className={cn("rounded-full object-cover", sizeClasses[size], className)}
       />
     );
   }

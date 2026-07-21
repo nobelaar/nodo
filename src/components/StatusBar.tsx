@@ -42,14 +42,7 @@ export function StatusBar({ className }: StatusBarProps) {
             fill="currentColor"
             fillOpacity="0.3"
           />
-          <rect
-            x="9.5"
-            y="0.5"
-            width="2"
-            height="10.5"
-            rx="0.5"
-            fill="currentColor"
-          />
+          <rect x="9.5" y="0.5" width="2" height="10.5" rx="0.5" fill="currentColor" />
         </svg>
         <svg width="26" height="12" viewBox="0 0 26 12" fill="none">
           <rect
@@ -62,15 +55,7 @@ export function StatusBar({ className }: StatusBarProps) {
             strokeOpacity="0.35"
           />
           <rect x="2" y="2" width="18" height="8" rx="1.5" fill="currentColor" />
-          <rect
-            x="23.5"
-            y="3"
-            width="2"
-            height="6"
-            rx="1"
-            fill="currentColor"
-            fillOpacity="0.4"
-          />
+          <rect x="23.5" y="3" width="2" height="6" rx="1" fill="currentColor" fillOpacity="0.4" />
         </svg>
       </div>
     </div>

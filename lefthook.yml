@@ -1,0 +1,28 @@
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{ts,tsx,js,jsx,json,md,css}"
+      run: pnpm exec oxfmt --write {staged_files}
+      stage_fixed: true
+      skip:
+        - merge
+        - rebase
+    lint:
+      glob: "*.{ts,tsx,js,jsx}"
+      run: pnpm exec oxlint --rules all {staged_files}
+      skip:
+        - merge
+        - rebase
+    doctor:
+      glob: "*.{ts,tsx}"
+      run: pnpm exec react-doctor --score --blocking none src/
+      skip:
+        - merge
+        - rebase
+    typecheck:
+      glob: "*.{ts,tsx}"
+      run: pnpm typecheck
+      skip:
+        - merge
+        - rebase
