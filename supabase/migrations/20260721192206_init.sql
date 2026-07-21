@@ -1,0 +1,2 @@
+-- Initial schema: empty foundation.
+-- Tables will be added starting from M1 · Cuenta y perfil.
