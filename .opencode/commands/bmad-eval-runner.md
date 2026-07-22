@@ -1,0 +1,5 @@
+---
+description: "Run a skill's evals and report results. Use when the user wants to evaluate a skill, run evals, benchmark a skill, validate triggers, optimize a description, or grade skill outputs."
+---
+
+@skills/bmad-eval-runner

@@ -1,0 +1,5 @@
+---
+description: "Sets up BMAD Loop Skills module in a project. Use when the user requests to 'install bmad-loop module', 'configure BMAD Loop Skills', or 'setup BMAD Loop Skills'."
+---
+
+@skills/bmad-loop-setup

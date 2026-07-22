@@ -8,5 +8,6 @@
     "no-unused-vars": "error",
     "no-console": "warn",
     "react/react-in-jsx-scope": "allow"
-  }
+  },
+  "ignorePatterns": ["_bmad", ".claude", ".github", ".opencode"]
 }
