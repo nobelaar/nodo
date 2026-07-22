@@ -1,7 +1,12 @@
 {
   "plugins": ["react"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
   "rules": {
     "no-unused-vars": "error",
-    "no-console": "warn"
+    "no-console": "warn",
+    "react/react-in-jsx-scope": "allow"
   }
 }
