@@ -15,16 +15,28 @@ beforeEach(() => {
 });
 
 describe("ThemeToggle", () => {
-  it('renders "🌙 Oscuro" in light mode (dark=false)', () => {
+  it("renders MoonIcon + 'Oscuro' in light mode", () => {
     vi.mocked(useTheme).mockReturnValue({ dark: false, toggle: mockToggle });
     render(<ThemeToggle />);
-    expect(screen.getByRole("button")).toHaveTextContent("🌙 Oscuro");
+    expect(screen.getByRole("button")).toHaveTextContent("Oscuro");
   });
 
-  it('renders "☀️ Claro" in dark mode (dark=true)', () => {
+  it("renders SunIcon + 'Claro' in dark mode", () => {
     vi.mocked(useTheme).mockReturnValue({ dark: true, toggle: mockToggle });
     render(<ThemeToggle />);
-    expect(screen.getByRole("button")).toHaveTextContent("☀️ Claro");
+    expect(screen.getByRole("button")).toHaveTextContent("Claro");
+  });
+
+  it("has aria-label for dark mode", () => {
+    vi.mocked(useTheme).mockReturnValue({ dark: true, toggle: mockToggle });
+    render(<ThemeToggle />);
+    expect(screen.getByRole("button")).toHaveAttribute("aria-label", "Cambiar a modo claro");
+  });
+
+  it("has aria-label for light mode", () => {
+    vi.mocked(useTheme).mockReturnValue({ dark: false, toggle: mockToggle });
+    render(<ThemeToggle />);
+    expect(screen.getByRole("button")).toHaveAttribute("aria-label", "Cambiar a modo oscuro");
   });
 
   it("calls toggle when clicked", () => {
