@@ -38,7 +38,7 @@ Thumbs.db
 *.swp
 
 # codegraph runtime
-.codegraph/daemon.pid
+.codegraph/
 
 # claude local settings
 .claude/settings.local.json
