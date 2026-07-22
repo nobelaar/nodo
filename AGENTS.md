@@ -42,3 +42,15 @@ The BMad Method skills in `.claude/skills/` are MANDATORY for all workflow decis
 - **PRD before code** — features need requirements, even if lightweight
 - **TDD within BMad** — `bmad-dev-story` works with the TDD cycle
 - **Fresh context** — run each BMad skill in a fresh conversation window as recommended
+
+# Project roadmap — essential reading
+
+Before implementing any feature, read the relevant milestone spec in `docs/roadmap/`. These define scope, DoD, and data model for each milestone.
+
+- **`docs/roadmap/PROGRESS.md`** — overall milestone completion status (check this first)
+- **`docs/roadmap/M*.md`** — individual milestone specs (scope, screens, data, DoD)
+- **`docs/roadmap/Modelo de datos.md`** — database schema reference
+- **`docs/roadmap/Seguridad RLS.md`** — Row Level Security rules
+- **`docs/roadmap/Stack técnico.md`** — architecture decisions
+- **`docs/roadmap/Glosario.md`** — domain terminology (serrano, tier, rol, etc.)
+- **`docs/superpowers/specs/`** — full PRD and design specs
