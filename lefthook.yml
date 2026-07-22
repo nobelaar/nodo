@@ -14,6 +14,12 @@ pre-commit:
       skip:
         - merge
         - rebase
+    test:
+      glob: "*.{ts,tsx}"
+      run: pnpm exec vitest run --changed
+      skip:
+        - merge
+        - rebase
     doctor:
       glob: "*.{ts,tsx}"
       run: pnpm exec react-doctor --score --blocking none src/
@@ -23,6 +29,14 @@ pre-commit:
     typecheck:
       glob: "*.{ts,tsx}"
       run: pnpm typecheck
+      skip:
+        - merge
+        - rebase
+
+pre-push:
+  commands:
+    test:
+      run: pnpm test
       skip:
         - merge
         - rebase
