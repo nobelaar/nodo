@@ -71,6 +71,57 @@ export type Database = {
         };
         Relationships: [];
       };
+      tasks: {
+        Row: {
+          categoria: Database["public"]["Enums"]["task_categoria"];
+          creado_por: string;
+          created_at: string;
+          descripcion: string | null;
+          estado: Database["public"]["Enums"]["task_estado"];
+          id: string;
+          titulo: string;
+          tomada_por: string | null;
+          urgencia: Database["public"]["Enums"]["task_urgencia"];
+        };
+        Insert: {
+          categoria?: Database["public"]["Enums"]["task_categoria"];
+          creado_por: string;
+          created_at?: string;
+          descripcion?: string | null;
+          estado?: Database["public"]["Enums"]["task_estado"];
+          id?: string;
+          titulo: string;
+          tomada_por?: string | null;
+          urgencia?: Database["public"]["Enums"]["task_urgencia"];
+        };
+        Update: {
+          categoria?: Database["public"]["Enums"]["task_categoria"];
+          creado_por?: string;
+          created_at?: string;
+          descripcion?: string | null;
+          estado?: Database["public"]["Enums"]["task_estado"];
+          id?: string;
+          titulo?: string;
+          tomada_por?: string | null;
+          urgencia?: Database["public"]["Enums"]["task_urgencia"];
+        };
+        Relationships: [
+          {
+            foreignKeyName: "tasks_creado_por_fkey";
+            columns: ["creado_por"];
+            isOneToOne: false;
+            referencedRelation: "profiles";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "tasks_tomada_por_fkey";
+            columns: ["tomada_por"];
+            isOneToOne: false;
+            referencedRelation: "profiles";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
     };
     Views: {
       [_ in never]: never;
@@ -81,6 +132,9 @@ export type Database = {
     Enums: {
       disponibilidad: "disponible" | "ocupado" | "solo_eventos";
       nombre_visible: "apodo" | "nombre_apellido" | "apellido_nombre";
+      task_categoria: "reparacion" | "limpieza" | "compra" | "mantenimiento" | "otro";
+      task_estado: "abierta" | "tomada" | "hecha" | "verificada";
+      task_urgencia: "baja" | "media" | "alta";
       tier: "tourist" | "scholar" | "standard" | "founder";
       visibilidad_tarifa: "publica" | "privada";
     };
@@ -210,6 +264,9 @@ export const Constants = {
     Enums: {
       disponibilidad: ["disponible", "ocupado", "solo_eventos"],
       nombre_visible: ["apodo", "nombre_apellido", "apellido_nombre"],
+      task_categoria: ["reparacion", "limpieza", "compra", "mantenimiento", "otro"],
+      task_estado: ["abierta", "tomada", "hecha", "verificada"],
+      task_urgencia: ["baja", "media", "alta"],
       tier: ["tourist", "scholar", "standard", "founder"],
       visibilidad_tarifa: ["publica", "privada"],
     },

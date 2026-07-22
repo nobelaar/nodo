@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-type Tab = "inicio" | "plantel" | "nodo" | "agenda" | "perfil";
+export type Tab = "inicio" | "plantel" | "nodo" | "agenda" | "perfil";
 
 interface TabBarProps {
   active?: Tab;
