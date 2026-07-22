@@ -1,0 +1,42 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { Input } from "./Input";
+
+describe("Input", () => {
+  it("renders with visible label", () => {
+    render(<Input label="Email" />);
+    const input = screen.getByLabelText("Email");
+    expect(input).toBeInTheDocument();
+    expect(input.tagName).toBe("INPUT");
+  });
+
+  it("renders input without a label element", () => {
+    render(<Input placeholder="Search..." />);
+    const input = screen.getByPlaceholderText("Search...");
+    expect(input).toBeInTheDocument();
+    expect(screen.queryByRole("label")).toBeNull();
+  });
+
+  it("shows error message when error prop is passed", () => {
+    render(<Input error="This field is required" />);
+    expect(screen.getByText("This field is required")).toBeInTheDocument();
+  });
+
+  it("accepts custom className", () => {
+    render(<Input className="my-input" />);
+    expect(screen.getByRole("textbox")).toHaveClass("my-input");
+  });
+
+  it("passes native HTML attributes to the input element", () => {
+    render(<Input placeholder="Enter name" type="email" name="userEmail" />);
+    const input = screen.getByRole("textbox");
+    expect(input).toHaveAttribute("placeholder", "Enter name");
+    expect(input).toHaveAttribute("type", "email");
+    expect(input).toHaveAttribute("name", "userEmail");
+  });
+
+  it("shows error styling on input when error is present", () => {
+    render(<Input error="Invalid" />);
+    expect(screen.getByRole("textbox")).toHaveClass("border-coral");
+  });
+});
