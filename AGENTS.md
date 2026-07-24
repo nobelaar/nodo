@@ -5,6 +5,16 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+# Production-first — mandatory
+
+The goal is **shipping to production**, not prototypes or demos.
+
+- Every change must be **production-ready**: correct, tested, and deployable.
+- **Do not leave intentional tech debt** ("fix later", vibecode UI, fake controls, stub backends for in-scope work).
+- If something is in scope, finish it properly (real data, real storage, real design parity) or explicitly cut it from scope — never half-ship.
+- UI source of truth: `design/nodo-serrano.pen`. Do not invent alternate layouts.
+- Active UI fidelity contract: `_bmad-output/specs/spec-ui-fidelity-m0-m2/`.
+
 # TDD — mandatory
 
 Test-driven development is REQUIRED for all implementation work. Before writing any implementation code, write a failing test first. Then write the minimal code to make it pass. Never write implementation before tests.
