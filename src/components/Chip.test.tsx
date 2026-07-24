@@ -40,4 +40,20 @@ describe("Chip", () => {
     render(<Chip label="Custom" className="my-chip" />);
     expect(screen.getByText("Custom")).toHaveClass("my-chip");
   });
+
+  it("has border-border and Pencil padding", () => {
+    render(<Chip label="Tag" />);
+    const chip = screen.getByText("Tag");
+    expect(chip).toHaveClass("border-border");
+    expect(chip).toHaveClass("px-[13px]");
+    expect(chip).toHaveClass("py-[7px]");
+  });
+
+  it("colored variants also have border and new padding", () => {
+    render(<Chip label="Mint" variant="mint" />);
+    const chip = screen.getByText("Mint");
+    expect(chip).toHaveClass("border-border");
+    expect(chip).toHaveClass("px-[13px]");
+    expect(chip).toHaveClass("py-[7px]");
+  });
 });

@@ -10,7 +10,7 @@ interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const sizeClasses = {
   sm: "h-10 px-4 text-sm",
-  md: "h-12 px-6 text-base",
+  md: "h-[54px] px-6 text-base",
   lg: "h-14 px-8 text-lg",
 };
 
@@ -18,9 +18,10 @@ export function PrimaryButton({ className, size = "md", children, ...props }: Pr
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center rounded-pill font-display font-semibold text-on-primary transition-all",
-        "bg-linear-to-r from-brand-green to-brand-mint",
-        "hover:from-brand-mint hover:to-brand-green",
+        "inline-flex items-center justify-center rounded-pill font-display font-medium text-on-primary transition-all",
+        "bg-linear-to-br from-brand-green to-brand-blue",
+        "shadow-[0_4px_14px_rgba(17,88,176,0.33)]",
+        "hover:opacity-90",
         "active:scale-[0.98]",
         "disabled:opacity-50 disabled:cursor-not-allowed",
         sizeClasses[size],

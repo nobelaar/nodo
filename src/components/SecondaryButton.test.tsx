@@ -25,7 +25,7 @@ describe("SecondaryButton", () => {
 
   it('applies md size class when size="md"', () => {
     render(<SecondaryButton size="md">Medium</SecondaryButton>);
-    expect(screen.getByRole("button")).toHaveClass("h-12");
+    expect(screen.getByRole("button")).toHaveClass("h-[54px]");
   });
 
   it('applies lg size class when size="lg"', () => {
@@ -36,5 +36,28 @@ describe("SecondaryButton", () => {
   it("accepts custom className", () => {
     render(<SecondaryButton className="my-btn">Custom</SecondaryButton>);
     expect(screen.getByRole("button")).toHaveClass("my-btn");
+  });
+
+  it("has surface background and border-border (not border-primary or border-2)", () => {
+    render(<SecondaryButton>Surface</SecondaryButton>);
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("bg-surface");
+    expect(btn).toHaveClass("border-border");
+    expect(btn.className).not.toContain("border-primary");
+    expect(btn.className).not.toContain("border-2");
+  });
+
+  it("uses text-text-primary (not text-primary brand color)", () => {
+    render(<SecondaryButton>Text</SecondaryButton>);
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("text-text-primary");
+    expect(btn).not.toHaveClass("text-primary");
+  });
+
+  it("has pill shape and default height 54px", () => {
+    render(<SecondaryButton>Pill</SecondaryButton>);
+    const btn = screen.getByRole("button");
+    expect(btn).toHaveClass("rounded-pill");
+    expect(btn).toHaveClass("h-[54px]");
   });
 });

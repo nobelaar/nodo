@@ -22,7 +22,7 @@ export function Chip({ label, variant = "default", className }: ChipProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-pill px-3 py-1 text-xs font-medium",
+        "inline-flex items-center rounded-pill border border-border px-[13px] py-[7px] text-xs font-medium",
         variantClasses[variant],
         className,
       )}

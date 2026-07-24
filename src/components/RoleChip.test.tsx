@@ -16,11 +16,11 @@ describe("RoleChip", () => {
     expect(chip).toHaveClass("text-primary");
   });
 
-  it("applies unconfirmed styling when confirmed is false", () => {
+  it("applies unconfirmed styling — no border-border per Pencil", () => {
     render(<RoleChip label="Moderator" confirmed={false} />);
     const chip = screen.getByText("Moderator");
     expect(chip).toHaveClass("bg-surface-inset");
-    expect(chip).toHaveClass("border-border");
+    expect(chip).not.toHaveClass("border-border");
     expect(chip).toHaveClass("text-text-secondary");
   });
 
@@ -39,5 +39,13 @@ describe("RoleChip", () => {
   it("accepts custom className", () => {
     render(<RoleChip label="Admin" className="my-role" />);
     expect(screen.getByText("Admin")).toHaveClass("my-role");
+  });
+
+  it("has Pencil padding px-[11px] py-[6px] and gap-[5px]", () => {
+    render(<RoleChip label="Member" />);
+    const chip = screen.getByText("Member");
+    expect(chip).toHaveClass("px-[11px]");
+    expect(chip).toHaveClass("py-[6px]");
+    expect(chip).toHaveClass("gap-[5px]");
   });
 });

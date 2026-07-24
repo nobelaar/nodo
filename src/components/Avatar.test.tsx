@@ -45,4 +45,34 @@ describe("Avatar", () => {
     render(<Avatar name="Juan Pérez" src="/photo.jpg" className="my-avatar" />);
     expect(screen.getByRole("img")).toHaveClass("my-avatar");
   });
+
+  it("uses gradient brand-mint to brand-blue on fallback (not solid bg-primary)", () => {
+    render(<Avatar name="Juan Pérez" />);
+    const el = screen.getByText("JP");
+    expect(el.className).toContain("from-brand-mint");
+    expect(el.className).toContain("to-brand-blue");
+    expect(el.className).toContain("bg-linear-to-br");
+    expect(el).not.toHaveClass("bg-primary");
+  });
+
+  it("has font-bold and text-on-primary on fallback", () => {
+    render(<Avatar name="Juan Pérez" />);
+    const el = screen.getByText("JP");
+    expect(el).toHaveClass("font-bold");
+    expect(el).toHaveClass("text-on-primary");
+  });
+
+  it("uses proportional text sizes per size", () => {
+    const r1 = render(<Avatar name="A" size="sm" />);
+    expect(screen.getByText("A")).toHaveClass("text-sm");
+    r1.unmount();
+
+    const r2 = render(<Avatar name="A" size="md" />);
+    expect(screen.getByText("A")).toHaveClass("text-lg");
+    r2.unmount();
+
+    const r3 = render(<Avatar name="A" size="lg" />);
+    expect(screen.getByText("A")).toHaveClass("text-xl");
+    r3.unmount();
+  });
 });

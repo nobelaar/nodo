@@ -13,16 +13,16 @@ export function Input({ label, error, className, ...props }: InputProps) {
   const id = useId();
 
   return (
-    <div className={cn("flex flex-col gap-1.5", className)}>
+    <div className={cn("flex flex-col gap-[7px]", className)}>
       {label && (
-        <label htmlFor={id} className="text-sm font-medium text-text-secondary">
+        <label htmlFor={id} className="text-[13px] font-medium text-text-secondary">
           {label}
         </label>
       )}
       <input
         id={id}
         className={cn(
-          "h-12 rounded-md border border-border bg-surface px-4 text-base text-text-primary",
+          "h-[50px] rounded-2xl border border-border bg-surface px-4 text-[15px] text-text-primary",
           "placeholder:text-text-muted",
           "focus:outline-hidden focus:ring-2 focus:ring-primary/40",
           "disabled:opacity-50 disabled:cursor-not-allowed",

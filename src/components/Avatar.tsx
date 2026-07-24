@@ -9,9 +9,9 @@ interface AvatarProps {
 }
 
 const sizeClasses = {
-  sm: "size-8 text-xs",
-  md: "size-12 text-sm",
-  lg: "size-20 text-lg",
+  sm: "size-8 text-sm",
+  md: "size-12 text-lg",
+  lg: "size-20 text-xl",
 };
 
 const sizePx = {
@@ -46,7 +46,7 @@ export function Avatar({ name, src, size = "md", className }: AvatarProps) {
   return (
     <div
       className={cn(
-        "rounded-full bg-primary text-on-primary flex items-center justify-center font-display font-medium",
+        "rounded-full bg-linear-to-br from-brand-mint to-brand-blue text-on-primary flex items-center justify-center font-display font-bold",
         sizeClasses[size],
         className,
       )}

@@ -39,4 +39,19 @@ describe("Input", () => {
     render(<Input error="Invalid" />);
     expect(screen.getByRole("textbox")).toHaveClass("border-coral");
   });
+
+  it("has pill/surface field with 16px radius and 50px height", () => {
+    render(<Input label="Email" />);
+    const field = screen.getByLabelText("Email");
+    expect(field).toHaveClass("rounded-2xl");
+    expect(field).toHaveClass("h-[50px]");
+    expect(field).toHaveClass("bg-surface");
+    expect(field).toHaveClass("border-border");
+  });
+
+  it("has label with text-text-secondary", () => {
+    render(<Input label="Email" />);
+    const label = screen.getByText("Email");
+    expect(label).toHaveClass("text-text-secondary");
+  });
 });

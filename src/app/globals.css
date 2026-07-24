@@ -54,6 +54,16 @@
   }
 }
 
+.dark {
+  --color-bg: #1a1614;
+  --color-surface: #262019;
+  --color-surface-inset: #201b17;
+  --color-text-primary: #f8f4ed;
+  --color-text-secondary: #c4bdb2;
+  --color-text-muted: #8a847c;
+  --color-border: #37302a;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text-primary);

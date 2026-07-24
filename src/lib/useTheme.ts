@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 
 function getServerSnapshot(): boolean {
   return false;
@@ -25,6 +25,10 @@ function subscribe(callback: () => void): () => void {
 
 export function useTheme() {
   const dark = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
 
   const toggle = useCallback(() => {
     const next = !getSnapshot();

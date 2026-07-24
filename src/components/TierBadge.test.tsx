@@ -48,4 +48,13 @@ describe("TierBadge", () => {
     render(<TierBadge tier="standard" className="my-badge" />);
     expect(screen.getByText("Standard")).toHaveClass("my-badge");
   });
+
+  it("has rounded-pill and Pencil padding", () => {
+    render(<TierBadge tier="scholar" />);
+    const badge = screen.getByText("Scholar");
+    expect(badge).toHaveClass("rounded-pill");
+    expect(badge).not.toHaveClass("rounded-md");
+    expect(badge).toHaveClass("px-[11px]");
+    expect(badge).toHaveClass("py-[5px]");
+  });
 });
