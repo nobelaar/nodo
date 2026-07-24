@@ -1,5 +1,5 @@
 # generated: 2026-07-23T18:20:22-03:00
-# last_updated: 2026-07-24T12:00:00-03:00
+# last_updated: 2026-07-24T12:15:00-03:00
 # project: nodo
 # project_key: NOKEY
 # tracking_system: file-system
@@ -41,7 +41,7 @@
 # - Retrospective appends its action items to action_items; sprint-status surfaces open ones
 
 generated: "2026-07-23T18:20:22-03:00"
-last_updated: "2026-07-24T12:00:00-03:00"
+last_updated: "2026-07-24T12:15:00-03:00"
 project: nodo
 project_key: NOKEY
 tracking_system: file-system
@@ -55,8 +55,8 @@ development_status:
   1-4-tabbar-icons-and-active-pill: review
   epic-1-retrospective: optional
 
-  epic-2: backlog
-  2-1-login-and-signup-brand-layout-1-1: backlog
+  epic-2: in-progress
+  2-1-login-and-signup-brand-layout-1-1: review
   2-2-check-email-screen-1-2: backlog
   2-3-recovery-and-reset-password-1-3-1-4: backlog
   epic-2-retrospective: optional

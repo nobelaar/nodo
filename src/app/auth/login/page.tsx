@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { useActionState } from "react";
 import Link from "next/link";
+import { Mountain } from "lucide-react";
 import { Input } from "@/components/Input";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton";
@@ -13,13 +14,20 @@ export default function LoginPage() {
   const [state, action, pending] = useActionState(signInWithPassword, null);
 
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <h2 className="font-display text-2xl font-bold text-text-primary">Iniciar sesión</h2>
-        <p className="text-text-secondary text-sm mt-1">Ingresá a tu cuenta de Nodo Serrano</p>
+    <div className="px-[26px] py-6 flex flex-col justify-center gap-[22px] min-h-full">
+      <div className="flex flex-col items-center gap-4">
+        <div className="size-[76px] rounded-full bg-linear-to-br from-brand-mint via-brand-blue to-brand-violet shadow-[0_8px_22px_-4px_rgba(17,88,176,0.33)] flex items-center justify-center">
+          <Mountain size={36} className="text-on-primary" />
+        </div>
+        <div className="flex flex-col items-center gap-1.5">
+          <h1 className="font-display text-[26px] font-bold text-text-primary">Nodo Serrano</h1>
+          <p className="font-body text-sm font-normal text-text-secondary">
+            El backoffice de la comunidad
+          </p>
+        </div>
       </div>
 
-      <form action={action} className="flex flex-col gap-4">
+      <form action={action} className="flex flex-col gap-[14px]">
         <Input name="email" type="email" label="Email" placeholder="tu@email.com" required />
         <Input
           name="password"
@@ -29,18 +37,27 @@ export default function LoginPage() {
           required
         />
 
+        <div className="flex justify-end">
+          <Link
+            href="/auth/recovery"
+            className="font-body text-[13px] font-medium text-text-secondary hover:underline"
+          >
+            ¿Olvidaste tu contraseña?
+          </Link>
+        </div>
+
         {state?.error && (
           <p className="text-sm text-coral bg-coral/10 rounded-md px-3 py-2">{state.error}</p>
         )}
 
-        <PrimaryButton type="submit" disabled={pending} className="mt-2">
+        <PrimaryButton type="submit" disabled={pending}>
           {pending ? "Ingresando..." : "Ingresar"}
         </PrimaryButton>
       </form>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-[12px]">
         <div className="flex-1 h-px bg-border" />
-        <span className="text-xs text-text-muted">o</span>
+        <span className="text-[13px] text-text-muted">o</span>
         <div className="flex-1 h-px bg-border" />
       </div>
 
@@ -50,16 +67,11 @@ export default function LoginPage() {
         </SecondaryButton>
       </form>
 
-      <div className="flex flex-col gap-2 text-center">
-        <Link href="/auth/recovery" className="text-sm text-brand-mint hover:underline font-medium">
-          ¿Olvidaste tu contraseña?
+      <div className="flex items-center justify-center gap-[5px]">
+        <span className="text-[13px] text-text-secondary">¿Primera vez?</span>
+        <Link href="/auth/signup" className="text-[13px] font-semibold text-coral hover:underline">
+          Creá tu cuenta
         </Link>
-        <p className="text-sm text-text-secondary">
-          ¿No tenés cuenta?{" "}
-          <Link href="/auth/signup" className="text-brand-mint hover:underline font-medium">
-            Registrate
-          </Link>
-        </p>
       </div>
     </div>
   );
