@@ -64,3 +64,7 @@ Before implementing any feature, read the relevant milestone spec in `docs/roadm
 - **`docs/roadmap/Stack técnico.md`** — architecture decisions
 - **`docs/roadmap/Glosario.md`** — domain terminology (serrano, tier, rol, etc.)
 - **`docs/superpowers/specs/`** — full PRD and design specs
+- **`Linear`** — tracking at https://linear.app/zerrant/project/nodo-serrano-ui-fidelity-m0-m2-38ca59210685
+  - Story files in `_bmad-output/implementation-artifacts/` are the SSOT for acceptance criteria
+  - `_bmad-output/implementation-artifacts/sprint-status.yaml` maps story keys to Linear ZER-# IDs
+  - Use Linear MCP to update issue status, add comments, link PRs
